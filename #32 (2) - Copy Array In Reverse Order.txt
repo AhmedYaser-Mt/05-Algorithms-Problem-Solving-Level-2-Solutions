@@ -1,0 +1,57 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillArrayByRandomNumbers(short Arr[100], short& ArrayLength)
+{
+	cout << "Enter number of elements :\n";
+	cin >> ArrayLength;
+
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		Arr[i] = RandomNumber(1, 100);
+	}
+
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+void CopyArrayInReverseOrder(short ArrSource[100], short ArrDestination[100], short ArrayLength)
+{
+	for (short i=0;i<ArrayLength;i++)
+	{
+		ArrDestination[i] = ArrSource[(ArrayLength-1-i)];
+	}
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short Array[100],ReverseArray1[100], Arraylength = 0;
+
+	FillArrayByRandomNumbers(Array, Arraylength);
+
+	CopyArrayInReverseOrder(Array, ReverseArray1, Arraylength);
+
+	cout << "\nArray 1 Elements:\n";
+	PrintArray(Array, Arraylength);
+
+	cout << "\nArray 2 Elements after copying array 1 in reversed order:\n";
+	PrintArray(ReverseArray1, Arraylength);
+
+	return 0;
+}S

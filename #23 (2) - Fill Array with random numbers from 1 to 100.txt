@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillArrayByRandomNumbers(short Arr[100], short& ArrayLength)
+{
+	cout << "Enter number of elements :\n";
+	cin >> ArrayLength;
+
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		Arr[i] = RandomNumber(1, 100);
+	}
+	
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short Array[100], Arraylength;
+
+	FillArrayByRandomNumbers(Array, Arraylength);
+
+	cout << "\nArray Elements: ";
+	PrintArray(Array, Arraylength);
+
+	return 0;
+}

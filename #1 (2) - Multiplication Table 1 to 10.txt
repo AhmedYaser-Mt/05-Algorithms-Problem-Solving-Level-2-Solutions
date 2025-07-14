@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+void PrintTableHeader()
+{
+	cout << "\n\t\t\tMultiplication Table From 1 to 10\n\n";
+	cout << '\t';
+
+	for (short i = 1;i <= 10;i++)
+	{
+		cout << i<<'\t';
+	}
+
+	cout << '\n';
+
+	for (short i = 1;i <= 83;i++)
+	{
+		cout << '_';
+	}
+
+
+	cout << '\n';
+}
+
+string ColumSperator(int i)
+{
+	if (i < 10)
+		return "   |  ";
+	else
+		return "  |  ";
+}
+
+void PrintMultiplicationTable()
+{
+	PrintTableHeader();
+
+	for (short i = 1;i <= 10;i++)
+	{
+		cout << " " << i << ColumSperator(i);
+
+		for (short j=1;j<=10;j++)
+		{
+			cout << i * j << '\t';
+		}
+
+		cout << '\n';
+	}
+}
+
+int main()
+{
+	PrintMultiplicationTable();
+	
+	return 0;
+}

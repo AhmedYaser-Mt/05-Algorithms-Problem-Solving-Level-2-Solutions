@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+short MySqrt(short Number)
+{
+	return pow(Number, 0.5);
+}
+
+short ReadNumber()
+{
+	short Number;
+
+	cout << "Please enter a number ?\n";
+	cin >> Number;
+	return Number;
+}
+
+int main()
+{
+	short Number = ReadNumber();
+
+	cout << "\nMy MySqrt Result : " << MySqrt(Number);
+	cout << "\nC++ sqrt Result : " << sqrt(Number);
+	return 0;
+}

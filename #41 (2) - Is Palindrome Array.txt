@@ -1,0 +1,63 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+enum enPalindromeOrNot{Palindrome=1,NotPalindrome=2};
+
+void FillArray(short arr[6],short & ArrayLength)
+{
+	ArrayLength = 6;
+	arr[0]=10;
+	arr[1]=20;
+	arr[2]=30;
+	arr[3]=30;
+	arr[4]=20;
+	arr[5]=10;
+}
+
+enPalindromeOrNot IsPalindromeArray(short arr[6], short ArrayLength)
+{
+	for (short i=0;i<=ceil(ArrayLength/2);i++)
+	{
+		if (arr[i]!=arr[ArrayLength-1-i])
+		{
+			return enPalindromeOrNot::NotPalindrome;
+		}
+	}
+	return enPalindromeOrNot::Palindrome;
+}
+
+void PrintResults(short arr[6], short ArrayLength)
+{
+	if (IsPalindromeArray(arr, ArrayLength)==enPalindromeOrNot::Palindrome)
+	{
+		cout << "\nYes array is Palindrome\n";
+	}
+	else
+	{
+		cout << "\nNo array is not Palindrome\n";
+	}
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int main()
+{
+
+	short Array[6], ArrayLength = 0;
+	FillArray(Array, ArrayLength);
+
+	cout << "\nArray 1 Elements:\n";
+	PrintArray(Array, ArrayLength);
+
+	PrintResults(Array, ArrayLength);
+
+	return 0;
+}

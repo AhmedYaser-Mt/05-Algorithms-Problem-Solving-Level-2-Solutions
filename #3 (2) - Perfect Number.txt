@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+bool IsPerfectNumber(int Number)
+{
+	int Sum = 0;
+	int M = round(Number / 2);
+
+	for (int i = 1;i <= M;i++)
+	{
+		if (Number%i==0)
+			Sum += i;
+	}
+
+	return Number == Sum;
+}
+
+void PrintResult(int Number)
+{
+	if (IsPerfectNumber(Number))
+		cout << endl << Number << " is perfect number\n";
+	else
+		cout << endl << Number << " is not perfect number\n";
+}
+
+int main()
+{
+	PrintResult(ReadPositiveNumber("Please enter a postive number?"));
+
+	return 0;
+}

@@ -1,0 +1,74 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+short ReadPositiveNumber(string Message)
+{
+	short Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillArrayByRandomNumbers(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		Arr[i] = RandomNumber(1, 100);
+	}
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+void SumOf2Arrays(short Arr[100], short Arr2[100], short ArrSum[100], short ArrayLength)
+{
+	for (short i=0;i<ArrayLength;i++)
+	{
+		ArrSum[i] = Arr[i] + Arr2[i];
+	}
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short Array[100], Array2[100], ArraySum[100], Arraylength = 0;
+
+	Arraylength = ReadPositiveNumber("Please enter size of arrays?");
+
+	FillArrayByRandomNumbers(Array, Arraylength);
+
+	FillArrayByRandomNumbers(Array2, Arraylength);
+
+	SumOf2Arrays(Array, Array2, ArraySum, Arraylength);
+
+	cout << "\nArray 1 Elements:\n";
+	PrintArray(Array, Arraylength);
+
+	cout << "\nArray 2 Elements:\n";
+	PrintArray(Array2, Arraylength);
+
+	cout << "\nSum of array1 and array2 elements:\n";
+	PrintArray(ArraySum, Arraylength);
+
+	return 0;
+}

@@ -1,0 +1,77 @@
+#include<iostream>
+using namespace std;
+
+void FillArray(short arr[10],short & ArrayLength)
+{
+	ArrayLength = 10;
+	arr[0]=10;
+	arr[1]=10;
+	arr[2]=10;
+	arr[3]=50;
+	arr[4]=50;
+	arr[5]=70;
+	arr[6]=70;
+	arr[7]=70;
+	arr[8]=70;
+	arr[9]=90;
+}
+
+void AddArrayElement(short Number, short Arr[10], short &ArrayLength)
+{
+	ArrayLength++;
+	Arr[ArrayLength - 1] = Number;
+}
+
+short FindNumberPositionInArray(short Arr[10], short ArrayLength, short NumberToSearch)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		if (Arr[i] == NumberToSearch)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+bool IsNumberInArray(short Arr[100], short ArrayLength, short NumberToSearch)
+{
+	return FindNumberPositionInArray(Arr, ArrayLength, NumberToSearch) != -1;
+}
+
+void CopyDistinctNumbers(short ArrSource[10], short ArrDestination[10], short ArrayLength,short &Array2Length)
+{
+	for (short i=0;i< ArrayLength;i++)
+	{
+		if (!IsNumberInArray(ArrDestination, ArrayLength, ArrSource[i]))
+		{
+			AddArrayElement(ArrSource[i], ArrDestination, Array2Length);
+		}
+	}
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int main()
+{
+
+	short ArraySource[10], ArrayDestination[10], ArrayLength = 0, Array2Length = 0;
+	FillArray(ArraySource, ArrayLength);
+
+	cout << "\nArray 1 Elements:\n";
+	PrintArray(ArraySource, ArrayLength);
+
+	CopyDistinctNumbers(ArraySource, ArrayDestination, ArrayLength, Array2Length);
+
+	cout << "\nArray 2 Distinct numbers:\n";
+	PrintArray(ArrayDestination, Array2Length);
+
+	return 0;
+}

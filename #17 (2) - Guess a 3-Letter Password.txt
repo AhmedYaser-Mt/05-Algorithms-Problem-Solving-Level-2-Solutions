@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+string ReadPassword()
+{
+	string Password;
+
+	cout << "\nPlease enter a 3-letter password (all capital)?\n";
+	cin >> Password;
+
+	return Password;
+}
+
+bool GuessPassword(string OriginalPassword)
+{
+	cout << endl;
+	string word = "";
+	int counter=1;
+
+	for (int i=65;i<=90;i++)
+	{
+		for (int j = 65;j <= 90;j++)
+		{
+			for (int k = 65;k <= 90;k++)
+			{
+				word += char(i);
+				word += char(j);
+				word += char(k);
+
+				cout <<"Trail ["<< counter <<"]: " << word << endl;
+
+				if (OriginalPassword == word)
+				{
+					cout << "\nPassword is " << word << endl;
+					cout << "Found after " << counter << " Trail(s)\n";
+					return 1;
+				}
+					
+				counter++;
+				word = "";
+			}
+		}
+	}
+
+	return 0;
+}
+
+int main()
+{
+	GuessPassword(ReadPassword());
+
+	return 0;
+}

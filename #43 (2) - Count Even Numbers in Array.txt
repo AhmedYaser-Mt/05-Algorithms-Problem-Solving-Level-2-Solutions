@@ -1,0 +1,71 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+enum enOddOrEven { Odd = 1, Even = 2 };
+
+enOddOrEven CheckOddOrEven(int Number)
+{
+	if (Number % 2 != 0)
+		return enOddOrEven::Odd;
+	else
+		return enOddOrEven::Even;
+}
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillArrayByRandomNumbers(short Arr[100], short& ArrayLength)
+{
+	cout << "Enter number of elements :\n";
+	cin >> ArrayLength;
+
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		Arr[i] = RandomNumber(1, 100);
+	}
+
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+short CountEvenNumbersInArray(short Arr[100], short ArrayLength)
+{
+	short EvenCounter = 0;
+
+	for (short i=0;i< ArrayLength;i++)
+	{
+		if (CheckOddOrEven(Arr[i])==enOddOrEven::Even)
+		{
+			EvenCounter++;
+		}
+	}
+	return EvenCounter;
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short Array[100], ArrayLength = 0;
+	FillArrayByRandomNumbers(Array, ArrayLength);
+
+	cout << "\nArray Elements:\n";
+	PrintArray(Array, ArrayLength);
+
+	short EvenCounter = CountEvenNumbersInArray(Array, ArrayLength);
+
+	cout << "\nEven Numbers count is: " << EvenCounter << endl;
+
+	return 0;
+}

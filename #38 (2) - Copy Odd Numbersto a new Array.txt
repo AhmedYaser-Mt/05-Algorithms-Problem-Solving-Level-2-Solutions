@@ -1,0 +1,77 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+enum enOddOrEven { Odd = 1, Even = 2 };
+
+enOddOrEven CheckOddOrEven(int Number)
+{
+	if (Number % 2 != 0)
+		return enOddOrEven::Odd;
+	else
+		return enOddOrEven::Even;
+}
+
+void AddArrayElement(short Number, short Arr[100], short &ArrayLength)
+{
+	ArrayLength++;
+	Arr[ArrayLength - 1] = Number;
+}
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillArrayByRandomNumbers(short Arr[100], short& ArrayLength)
+{
+	cout << "Enter number of elements :\n";
+	cin >> ArrayLength;
+
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		Arr[i] = RandomNumber(1, 100);
+	}
+
+}
+
+void CopyOddNumbers(short ArrSource[100], short ArrDestination[100], short ArrayLength,short &Array2Length)
+{
+	for (short i=0;i< ArrayLength;i++)
+	{
+		if (CheckOddOrEven(ArrSource[i])==enOddOrEven::Odd)
+		{
+			AddArrayElement(ArrSource[i], ArrDestination, Array2Length);
+		}
+	}
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short ArraySource[100], ArrayLength = 0, Array2Length=0;
+
+	FillArrayByRandomNumbers(ArraySource, ArrayLength);
+
+	short ArrayDestination[100];
+	CopyOddNumbers(ArraySource, ArrayDestination, ArrayLength, Array2Length);
+	
+	cout << "\nArray 1 Elements:\n";
+	PrintArray(ArraySource, ArrayLength);
+
+	cout << "\nArray 2 Odd numbers:\n";
+	PrintArray(ArrayDestination, Array2Length);
+
+	return 0;
+}

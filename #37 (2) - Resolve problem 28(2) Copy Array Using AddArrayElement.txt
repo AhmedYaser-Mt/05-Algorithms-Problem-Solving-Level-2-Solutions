@@ -1,0 +1,64 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+void AddArrayElement(short Number, short Arr[100], short &ArrayLength)
+{
+	ArrayLength++;
+	Arr[ArrayLength - 1] = Number;
+}
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void FillArrayByRandomNumbers(short Arr[100], short& ArrayLength)
+{
+	cout << "Enter number of elements :\n";
+	cin >> ArrayLength;
+
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		Arr[i] = RandomNumber(1, 100);
+	}
+
+}
+
+void CopyArrayUsingAddArrayElement(short ArrSource[100], short ArrDestination[100], short ArrayLength,short &Array2Length)
+{
+	for (short i=0;i< ArrayLength;i++)
+	{
+		AddArrayElement(ArrSource[i], ArrDestination, Array2Length);
+	}
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short ArraySource[100], ArrayLength = 0, Array2Length=0;
+
+	FillArrayByRandomNumbers(ArraySource, ArrayLength);
+
+	short ArrayDestination[100];
+	CopyArrayUsingAddArrayElement(ArraySource, ArrayDestination, ArrayLength, Array2Length);
+	
+	cout << "Array 1 Elements:";
+	PrintArray(ArraySource, ArrayLength);
+
+	cout << "Array 2 Elements after copy:";
+	PrintArray(ArrayDestination, Array2Length);
+
+	return 0;
+}

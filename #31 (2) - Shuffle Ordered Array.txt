@@ -1,0 +1,67 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+short RandomNumber(short From, short To)
+{
+	short RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void GenerateArrayInOrder(short Arr[100], short& ArrayLength)
+{
+	cout << "Enter number of elements :\n";
+	cin >> ArrayLength;
+
+	for (short i=0;i<ArrayLength;i++)
+	{
+		Arr[i] = (i + 1);
+	}
+
+	cout << endl;
+}
+
+void PrintArray(short Arr[100], short ArrayLength)
+{
+	for (short i = 0;i < ArrayLength;i++)
+	{
+		cout << Arr[i] << " ";
+	}
+	cout << endl;
+}
+
+void Swap(short& A, short& B)
+{
+	int Temp;
+
+	Temp = A;
+	A = B;
+	B = Temp;
+}
+
+void ShuffleArray (short Arr[100], short ArrayLength)
+{
+	for (short i=0;i<ArrayLength;i++)
+	{
+		Swap(Arr[RandomNumber(1, ArrayLength) - 1], Arr[RandomNumber(1, ArrayLength) - 1]);
+	}
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	short Array[100], Arraylength = 0;
+
+	GenerateArrayInOrder(Array, Arraylength);
+
+	cout << "\nArray Elements before shuffle:\n";
+	PrintArray(Array, Arraylength);
+
+	ShuffleArray(Array, Arraylength);
+
+	cout << "\nArray Elements after shuffle:\n";
+	PrintArray(Array, Arraylength);
+
+	return 0;
+}
