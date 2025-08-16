@@ -1,6 +1,6 @@
 # 📘 05 - Algorithms & Problem Solving – Level 2 (Programming Advices)
 
-🎉 I’m happy to share that I’ve completed the **05 – Algorithms & Problem Solving Level 2** course from **Programming Advices**, taught by **Dr. Mohamed Abou Hadhoud**. 🏆  
+🎉 I’m happy to share that I’ve completed the **05 – Algorithms & Problem Solving Level 2** course  [AbouHadhood Platform](https://programmingadvices.com/). 🏆  
 
 This repository contains **algorithmic problems and solutions** from Level 2, focusing on deepening problem-solving skills while applying the **Divide & Conquer** approach.
 
