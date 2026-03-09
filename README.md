@@ -1,51 +1,106 @@
-# 📘 05 - Algorithms & Problem Solving – Level 2 (Programming Advices)
+# 📘 05 - Algorithms & Problem Solving – Level 2 (C++)
 
-🎉 I’m happy to share that I’ve completed the **05 – Algorithms & Problem Solving Level 2** course  [AbouHadhood Platform](https://programmingadvices.com/). 🏆  
+This repository contains my solutions for **50 algorithmic problems** from the **Algorithms & Problem Solving – Level 2** course in the **Programming Advices** training track by **Dr. Mohammed Abu-Hadhoud**.
 
-This repository contains **algorithmic problems and solutions** from Level 2, focusing on deepening problem-solving skills while applying the **Divide & Conquer** approach.
-
----
-
-## 🚀 Course Overview
-This phase was all about:
-- Diving deeper into algorithms and problem-solving strategies.
-- Refining structured programming skills.
-- Staying true to the principle: **Divide & Conquer**.
-
-We broke every problem into small, focused functions & procedures—each with a single responsibility—ensuring **clean, readable, and reusable code**.
+The main goal of this course is to strengthen **problem-solving skills**, improve **logical thinking**, and gain **practical programming experience** through intensive practice.
 
 ---
 
-## 💡 Key Highlights
-- 🔹 Implementing functions from scratch instead of relying on built-in **cmath** library functions:
-  - `abs()`
-  - `round()`
-  - `floor()`
-  - `ceil()`
-  - `sqrt()`
-- 🔹 Practicing decomposition and function design.
-- 🔹 Strengthening debugging and optimization skills.
-- 🔹 Wrapping up with **two hands-on projects** that applied everything learned.
+# 🚀 Course Overview
+
+This level focuses on gaining real programming experience through solving a new set of problems that are **more challenging than Level 1**.
+
+The course emphasizes:
+
+• Practicing structured programming using **C++**  
+• Applying the **Divide & Conquer** problem-solving strategy  
+• Writing clean and organized code using **functions and procedures**  
+• Learning from professional solutions and explanations  
+• Building experience through **consistent practice**
+
+Programming is not just about syntax — it is about **practice and experience**.
 
 ---
 
+# 🧠 What I Practiced
 
+Throughout this course I worked on **50 programming problems** covering topics such as:
+
+• Prime numbers  
+• Perfect numbers  
+• Number manipulation  
+• Digit analysis  
+• Pattern printing  
+• Random number generation  
+• Encryption and decryption  
+• Array operations  
+• Mathematical algorithms  
+• Implementing mathematical functions from scratch
+
+Each solution focuses on **clarity, modularity, and clean code design**.
 
 ---
 
-## 🛠 Technologies Used
-- **Language:** C++
-- **Paradigm:** Structured Programming
-- **Tools:** VS Code / Dev-C++, Git, GitHub
+# 📂 Repository Structure
+
+The repository contains **50 solved problems**, each implemented in C++.
+
+Examples of included problems:
+
+• Multiplication Table (1 → 10)  
+• Print All Prime Numbers (1 → N)  
+• Perfect Number Detection  
+• Reverse Number  
+• Digit Frequency  
+• Palindrome Number  
+• Random Number Generation  
+• Generate Random Keys  
+• Array Operations (Sum, Min, Max, Average)  
+• Copy Arrays  
+• Shuffle Arrays  
+• Count Even / Odd / Positive / Negative Numbers  
+• Custom implementations of mathematical functions
 
 ---
 
-## 🔜 Next Steps
-After completing this level, I advanced to **Level 3 – Algorithms & Problem Solving**, which introduced more complex challenges and advanced concepts.
+# 🧮 Implemented Math Functions
+
+Instead of using the standard **cmath** library, this course required implementing several functions manually, including:
+
+• MyABS  
+• MyRound  
+• MyFloor  
+• MyCeil  
+• MySqrt  
+
+This helped strengthen **algorithm design skills** and understanding of how these operations work internally.
 
 ---
 
-## 📬 Connect
-- **GitHub:** [AhmedYaser-Mt](https://github.com/AhmedYaser-Mt)
-- **LinkedIn:** [Ahmed Yasser](https://www.linkedin.com/in/ahmed-yaser-mt)
+# 🛠 Technologies Used
 
+Language: **C++**  
+Programming Style: **Structured Programming**  
+Tools: **VS Code / Dev-C++**  
+Version Control: **Git & GitHub**
+
+---
+
+# 🎯 Learning Outcomes
+
+By completing this course I improved my ability to:
+
+• Solve algorithmic problems efficiently  
+• Break complex problems into smaller steps  
+• Write clean and maintainable code  
+• Recognize common algorithm patterns  
+• Implement logic without relying on built-in functions  
+• Strengthen debugging and logical thinking skills
+
+---
+
+# 👨‍🏫 Acknowledgments
+
+Special thanks to **Dr. Mohammed Abu-Hadhoud** for providing a structured and practical learning path through the **Programming Advices** platform.
+
+---
